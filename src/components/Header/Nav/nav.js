@@ -13,11 +13,11 @@ const links = [
 
 function Nav() {
     const [menuMobile, setMenuMobile] = useState(false);
-    const [isVisible, setIsVisible] = useState(window.innerWidth > 1200);
+    const [isVisible, setIsVisible] = useState(window.innerWidth > 1150);
 
     useEffect(() => {
         const handleResize = () => {
-            setIsVisible(window.innerWidth > 1200);
+            setIsVisible(window.innerWidth > 1150);
         };
 
         window.addEventListener("resize", handleResize);
