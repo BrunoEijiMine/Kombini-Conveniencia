@@ -1,5 +1,18 @@
 import React from "react";
-import { NavMobileContainer, NavMobileText, NavMobileButton, BackgroundNavOpacity, NavMobileTitle } from "./navMobileStyles";
+import { 
+    NavMobileContainer,
+    NavMobileButton, 
+    BackgroundNavOpacity, 
+    NavMobileTitle, 
+    MobileListWrapper,
+    MobileListContainer 
+    } 
+from "./navMobileStyles";
+
+// Logo
+import logo from "../../../assets/img/logo-kombini.png"
+
+// Biblioteca de icones
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faX } from '@fortawesome/free-solid-svg-icons'
 
@@ -27,32 +40,27 @@ const NavMobile = () => {
 
     return (
         <>
-            <BackgroundNavOpacity />
+            
+            <BackgroundNavOpacity />{/* Opacidade do fundo ao ativar o mobile */}
+
             <NavMobileContainer>
-                <NavMobileTitle>
-                    <p>Teste</p>
-                    <FontAwesomeIcon icon={faX} />
-                </NavMobileTitle>
+                <MobileListWrapper>
+                    <NavMobileTitle>
+                        <img src={logo} className="logo"/>
+                        <FontAwesomeIcon className="icon" icon={faX} />
+                    </NavMobileTitle>
 
-
-
-
-
-
-
-
-
-
-                {links.map((link, index) => {
-                    return (
-                        <NavMobileText href={link.href} key={index}>
-                            {link.name}
-                        </NavMobileText>
-                    );
-                })}
-
-                <NavMobileButton>Nos visite</NavMobileButton>
-
+                    <MobileListContainer>
+                        {links.map((link, index) => {
+                            return (
+                                <a href={link.href} key={index}>
+                                    {link.name}
+                                </a>
+                            );
+                        })}
+                        <NavMobileButton>Nos visite</NavMobileButton>
+                    </MobileListContainer>
+                </MobileListWrapper>
 
             </NavMobileContainer>
 
