@@ -1,78 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { 
     NavMobileContainer,
     NavMobileButton, 
     BackgroundNavOpacity, 
-    NavMobileTitle, 
+    NavMobileTitle,
     MobileListWrapper,
     MobileListContainer 
 } from "./navMobileStyles";
-
-// Logo
-import logo from "../../../assets/img/logo-kombini.png";
-
-// Biblioteca de ícones
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faX } from '@fortawesome/free-solid-svg-icons';
+import logo from "../../../assets/img/logo-kombini.png";
 
 const links = [
-    {
-        name: "Início",
-        href: "/",
-    },
-    {
-        name: "Sobre",
-        href: "/sobre",
-    },
-    {
-        name: "Menu",
-        href: "/menu",
-    },
-    {
-        name: "Contato",
-        href: "/contato",
-    },
+    { name: "Início", href: "/" },
+    { name: "Sobre", href: "/sobre" },
+    { name: "Menu", href: "/menu" },
+    { name: "Contato", href: "/contato" },
 ];
 
-const NavMobile = () => {
-
-    // Estados para fechar o nav
-    const [navOpen, setNavOpen] = useState(false)
-
-    const openNav = () => {
-        setNavOpen(true)
-    }
-
-    const closeNav = () => {
-        setNavOpen(false)
-    }
-
-    // Aqui realizo a funçao para abrir o nav
-    const [isVisible, setIsVisible] = useState(window.innerWidth < 1200);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsVisible(window.innerWidth < 1200);
-            openNav();
-        };
-
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
-
+function NavMobile({ openNav, closeNav }) {
     return (
         <>
-            {isVisible && navOpen && (
+            {openNav && (
                 <>
-                    <BackgroundNavOpacity /> {/* Opacidade do fundo ao ativar o mobile */}
+                    <BackgroundNavOpacity onClick={closeNav} />
                     <NavMobileContainer>
                         <MobileListWrapper>
                             <NavMobileTitle>
                                 <img src={logo} alt="Logo Kombini" className="logo" />
-                                <FontAwesomeIcon className="icon" icon={faX} onClick={closeNav}/>
+                                <FontAwesomeIcon className="icon" icon={faX} onClick={closeNav} />
                             </NavMobileTitle>
 
                             <MobileListContainer>
@@ -89,6 +45,6 @@ const NavMobile = () => {
             )}
         </>
     );
-};
+}
 
 export default NavMobile;

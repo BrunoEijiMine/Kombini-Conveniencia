@@ -16,8 +16,4 @@ export const NavContainer = styled.div`
   justify-content: space-between;
   align-items: center;
 
-
-@media only screen and (max-width: 768px) {
-    background-color: ${colors.primary}
-}
 `
