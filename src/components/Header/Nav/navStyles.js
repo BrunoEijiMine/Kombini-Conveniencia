@@ -19,3 +19,8 @@ export const NavButton = styled.a`
     padding: 8px 16px;
     font-weight: 600;
 `;
+
+export const Icon = styled.i`
+    color: ${colors.white};
+    font-weight: 600;
+`;

@@ -1,64 +1,50 @@
 import React from "react";
-import { NavMobileContainer, NavMobileText, NavMobileButton, BackgroundNavOpacity, NavMobileTitle } from "./navMobileStyles";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faX } from '@fortawesome/free-solid-svg-icons'
+import { 
+    NavMobileContainer,
+    NavMobileButton, 
+    BackgroundNavOpacity, 
+    NavMobileTitle,
+    MobileListWrapper,
+    MobileListContainer 
+} from "./navMobileStyles";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faX } from '@fortawesome/free-solid-svg-icons';
+import logo from "../../../assets/img/logo-kombini.png";
 
 const links = [
-    {
-        name: "Inicio",
-        href: "/",
-    },
-    {
-        name: "Sobre",
-        href: "/sobre",
-    },
-    {
-        name: "Menu",
-        href: "/menu",
-    },
-    {
-        name: "Contato",
-        href: "/contato",
-    },
-]
+    { name: "Início", href: "/" },
+    { name: "Sobre", href: "/sobre" },
+    { name: "Menu", href: "/menu" },
+    { name: "Contato", href: "/contato" },
+];
 
-
-const NavMobile = () => {
-
+function NavMobile({ openNav, closeNav }) {
     return (
         <>
-            <BackgroundNavOpacity />
-            <NavMobileContainer>
-                <NavMobileTitle>
-                    <p>Teste</p>
-                    <FontAwesomeIcon icon={faX} />
-                </NavMobileTitle>
+            {openNav && (
+                <>
+                    <BackgroundNavOpacity onClick={closeNav} />
+                    <NavMobileContainer>
+                        <MobileListWrapper>
+                            <NavMobileTitle>
+                                <img src={logo} alt="Logo Kombini" className="logo" />
+                                <FontAwesomeIcon className="icon" icon={faX} onClick={closeNav} />
+                            </NavMobileTitle>
 
-
-
-
-
-
-
-
-
-
-                {links.map((link, index) => {
-                    return (
-                        <NavMobileText href={link.href} key={index}>
-                            {link.name}
-                        </NavMobileText>
-                    );
-                })}
-
-                <NavMobileButton>Nos visite</NavMobileButton>
-
-
-            </NavMobileContainer>
-
+                            <MobileListContainer>
+                                {links.map((link, index) => (
+                                    <a href={link.href} key={index}>
+                                        {link.name}
+                                    </a>
+                                ))}
+                                <NavMobileButton>Nos visite</NavMobileButton>
+                            </MobileListContainer>
+                        </MobileListWrapper>
+                    </NavMobileContainer>
+                </>
+            )}
         </>
     );
-
 }
 
-export default NavMobile
+export default NavMobile;
