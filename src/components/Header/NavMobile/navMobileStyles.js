@@ -7,7 +7,7 @@ export const NavMobileContainer = styled.div`
     top: 0;
     right: 0;
     width: 250px;
-    padding: 0 1rem;
+    padding: 0 2rem;
     height: 100vh;
     z-index: 9999;
     display: block;
@@ -53,6 +53,7 @@ export const NavMobileTitle = styled.div`
 
      > .icon {
         color: ${colors.white};
+        cursor: pointer;
     }
 `;
 
@@ -74,8 +75,4 @@ export const MobileListContainer = styled.div`
             color: black; 
         }
     }
-`;
-
-export const MobileList = styled.p  `
-    
 `;
