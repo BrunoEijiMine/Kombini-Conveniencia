@@ -7,6 +7,8 @@ function App() {
     <>
       <Header />
       <HomeBanner />
+      <HomeBanner />
+      <HomeBanner />
     </>
   );
 }

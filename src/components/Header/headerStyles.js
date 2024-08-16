@@ -8,8 +8,9 @@ export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  position: fixed;
   top: 0;
+  z-index: 100;
 `;
 
 export const NavContainer = styled.div`
