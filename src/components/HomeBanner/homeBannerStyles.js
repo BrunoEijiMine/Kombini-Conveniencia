@@ -3,7 +3,9 @@ import background from "../../assets/img/background-inicio.jpg";
 import colors from "../ui/colors"
 
 
-export const Container = styled.div``;
+export const Container = styled.div`
+    position: relative;
+`;
 
 export const Banner = styled.div`
     background-image: url(${background});
