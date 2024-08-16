@@ -1,12 +1,5 @@
 import React from "react";
-import { 
-    NavMobileContainer,
-    NavMobileButton, 
-    BackgroundNavOpacity, 
-    NavMobileTitle,
-    MobileListWrapper,
-    MobileListContainer 
-} from "./navMobileStyles";
+import { NavMobileContainer, NavMobileButton, BackgroundNavOpacity, NavMobileTitle, MobileListWrapper, MobileListContainer } from "./navMobileStyles";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faX } from '@fortawesome/free-solid-svg-icons';
 import logo from "../../../assets/img/logo-kombini.png";
