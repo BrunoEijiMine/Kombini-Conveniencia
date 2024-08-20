@@ -41,7 +41,7 @@ function Nav() {
             ) : (
                 <>
                     <Icon onClick={() => setMenuMobile(true)}>
-                        <FontAwesomeIcon icon={faBarsStaggered} />
+                        <FontAwesomeIcon icon={faBarsStaggered} style={{cursor: "pointer"}}/>
                     </Icon>
                     
                     {menuMobile && (
