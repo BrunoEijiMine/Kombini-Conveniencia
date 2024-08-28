@@ -1,7 +1,9 @@
 import styled from "styled-components";
-import colors from "../ui/colors"
-
+import colors from "../ui/colors";
 
 export const Container = styled.article`
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `;
